@@ -1,1 +1,1 @@
-# Noori-Jama-Maslid
+# Noori-Jama-Masjid
