@@ -1,0 +1,351 @@
+/* CSS Styles (Colorful & Responsive Theme) */
+
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Soft grey background to make sections pop */
+    color: #333;
+    line-height: 1.7;
+}
+
+/* --- Colorful Header --- */
+header {
+    /* Rich green radial gradient */
+    background: radial-gradient(ellipse at center, #00796b, #004d40);
+    color: #ffffff;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-bottom: 5px solid #ffd700; /* Solid gold border */
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtle Islamic art pattern overlay */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffd700; /* Bright gold color for the main title */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); /* 3D effect */
+}
+
+header p {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    color: #e0f2f1; /* Soft green-white for the address */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Desktop Navigation Bar --- */
+nav {
+    background-color: #004d40; /* Dark, elegant green */
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: #ffd700; /* Gold color on hover */
+    transform: translateY(-2px);
+}
+
+/* --- Mobile-Only Bottom Navigation Bar --- */
+.mobile-nav {
+    display: none; /* Hidden by default on desktop */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    justify-content: space-around;
+    padding: 8px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 1001;
+    border-top: 1px solid #eee;
+}
+
+.mobile-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #004d40;
+    text-decoration: none;
+    font-size: 0.75rem;
+    flex-grow: 1;
+    transition: color 0.2s;
+}
+
+.mobile-nav a i {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.mobile-nav a:hover, .mobile-nav a:focus {
+    color: #ffd700;
+}
+
+
+/* --- Main Content & Sections --- */
+main {
+    padding: 1rem;
+}
+
+section {
+    background: #ffffff;
+    margin: 1.5rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 950px;
+    border-top: 4px solid #00796b; /* Green accent on top of each section */
+}
+
+section h2 {
+    color: #005a00;
+    border-bottom: 3px solid #ffd700;
+    padding-bottom: 10px;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+
+section h2 i {
+    margin-right: 12px;
+    color: #00796b;
+}
+
+/* About Section Specific Styles */
+.about-content h3 {
+    color: #00695c;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* --- Image Gallery --- */
+#gallery {
+    padding: 2rem 0;
+    border-top: none; /* Remove top border for visual flow */
+}
+
+.gallery-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.gallery-scroller {
+    display: flex;
+    width: fit-content;
+    animation: scroll 25s linear infinite;
+}
+
+.gallery-scroller img {
+    height: 280px;
+    margin: 0 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.gallery-container:hover .gallery-scroller {
+    animation-play-state: paused;
+}
+
+.gallery-scroller img:hover {
+    transform: scale(1.05);
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- Donation Section --- */
+.donation-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    text-align: center;
+}
+
+.qr-code img {
+    width: 220px;
+    height: 220px;
+    border: 5px solid #006400;
+    border-radius: 12px;
+    padding: 5px;
+    background: white;
+}
+
+.upi-id {
+    background-color: #e8f5e9;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 2px dashed #006400;
+    margin: 1rem 0;
+    display: inline-block;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #ffd700, #f0c14b);
+    color: #111;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    filter: brightness(1.1);
+}
+
+.cta-button i {
+    margin-right: 8px;
+}
+
+.pay-button {
+    background: linear-gradient(45deg, #28a745, #218838);
+    color: #fff;
+    margin-left: 10px;
+}
+
+/* --- Location & Contact --- */
+.map-container {
+    border: 5px solid #006400;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.phone-number {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #005a00;
+    text-align: center;
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* NEW: WhatsApp Button Styling */
+.whatsapp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: white;
+    padding: 12px;
+    border-radius: 10% 10% 10% 10%;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex-shrink: 0; /* Prevents the button from shrinking */
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* --- Responsive Design for Phones --- */
+@media (max-width: 768px) {
+    body {
+        /* Add padding to the bottom to prevent content from being hidden by the new nav bar */
+        padding-bottom: 70px;
+    }
+
+    header h1 {
+        font-size: 2.2rem; /* Adjust font size for smaller screens */
+    }
+
+    /* Hide the original top navigation on mobile */
+    nav {
+        display: none;
+    }
+
+    /* Show the new bottom navigation on mobile */
+    .mobile-nav {
+        display: flex;
+    }
+    
+    .donation-content {
+        flex-direction: column;
+    }
+    .pay-button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    section {
+        padding: 1.5rem; /* Reduce padding on smaller screens */
+    }
+  /* add new line  */
+
+    .logo {
+        height: 50px;
+    }
+}
